@@ -1,0 +1,40 @@
+[
+  {
+    "image": "./dataset/test/IMG_2504.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_2503.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_2502.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_2499.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_2498.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_2495.jpeg",
+    "volume": "2ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_2494.jpeg",
+    "volume": "2ml",
+    "zoom": "22mm"
+  }
+]

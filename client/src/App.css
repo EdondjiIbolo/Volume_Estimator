@@ -1,0 +1,90 @@
+/* Reset básico */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+  width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilos de la tarjeta */
+.card {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Estilo del botón de subir imagen */
+.upload-box .ant-upload.ant-upload-select {
+  width: 100px !important;
+  height: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px dashed #1890ff;
+}
+
+/* Campo de entrada de número */
+.input-zoom {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Botón de enviar */
+.submit-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Contenedor de la vista previa */
+.preview-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo de la imagen de vista previa */
+.preview-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de eliminar imagen */
+.delete-btn {
+  margin-top: 10px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+}
+
+/* Tarjeta de resultado */
+.result-card {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ant-upload-list {
+  display: flex;
+  justify-content: center;
+}

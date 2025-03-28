@@ -1,0 +1,46 @@
+### Prerequisites
+
+Antes de ejecutar este proyecto, asegúrate de que tu entorno cumple con los siguientes requisitos:
+
+#### 1️⃣ **Hardware Requerido**
+- Mac con chip **Apple Silicon M1/M2/M3** o una computadora con GPU NVIDIA (opcional para entrenamiento más rápido).
+- **16GB de RAM** recomendados para entrenamiento eficiente.
+- Cámara **iPhone 13 Pro** (o cualquier otra con valores de zoom conocidos).
+
+#### 2️⃣ **Software Necesario**
+- **macOS Ventura o superior** (recomendado para compatibilidad y rendimiento).
+- **Visual Studio Code** (VS Code) o **PyCharm**.
+- **Python 3.10 o superior** (se recomienda instalar con Homebrew).
+- **pip y virtualenv** (para la gestión de dependencias).
+- **PyTorch** con soporte para Apple Metal (para M1/M2/M3) o CUDA (para GPU NVIDIA).
+
+#### 3️⃣ **Dependencias de Python**
+Antes de ejecutar el código, instala las siguientes dependencias usando pip:
+
+```sh
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu  # Para Mac M1/M2/M3
+# Si usas GPU NVIDIA, instala con:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+pip install timm pandas pillow numpy opencv-python tqdm matplotlib
+```
+
+#### 4️⃣ **Extensiones recomendadas para VS Code**
+Si usas VS Code, instala las siguientes extensiones para facilitar el desarrollo:
+- **Python** (Microsoft)
+- **Pylance** (Microsoft)
+- **Jupyter** (Microsoft)
+- **TensorBoard** (para visualizar el entrenamiento)
+
+#### 5️⃣ **Configuración del entorno virtual** (opcional pero recomendado)
+Es recomendable crear un entorno virtual para el proyecto:
+
+```sh
+python3 -m venv venv  # Crear el entorno virtual
+source venv/bin/activate  # Activar el entorno en macOS/Linux
+# Para Windows: venv\Scripts\activate
+pip install -r requirements.txt  # Instalar dependencias
+```
+
+Con esto, el entorno de desarrollo estará listo para entrenar y probar el modelo.
+

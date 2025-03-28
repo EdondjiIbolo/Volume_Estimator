@@ -1,0 +1,96 @@
+[
+  {
+    "image": "./dataset/test/IMG_1298.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1299.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1300.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1301.jpeg",
+    "volume": "5ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1302.jpeg",
+    "volume": "5ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1303.jpeg",
+    "volume": "5ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_1304.jpeg",
+    "volume": "3ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1305.jpeg",
+    "volume": "3ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1306.jpeg",
+    "volume": "3ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_1307.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1308.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1309.jpeg",
+    "volume": "6ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_1310.jpeg",
+    "volume": "4ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1311.jpeg",
+    "volume": "4ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1312.jpeg",
+    "volume": "4ml",
+    "zoom": "22mm"
+  },
+
+  {
+    "image": "./dataset/test/IMG_1313.jpeg",
+    "volume": "5ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1314.jpeg",
+    "volume": "5ml",
+    "zoom": "22mm"
+  },
+  {
+    "image": "./dataset/test/IMG_1315.jpeg",
+    "volume": "5ml",
+    "zoom": "22mm"
+  }
+]
