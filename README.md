@@ -96,3 +96,15 @@ Esto generará un archivo CSV compatible con el entrenamiento del modelo.
 - **Asegúrate de tomar fotos con la misma distancia y ángulo.**
 - **El zoom se mide en mm**, no en factores (ej. x1.0, x2.0).
 - **Cuida la iluminación y nitidez para mejores resultados.**
+
+🔹 2️⃣ Asegurar que VS Code use el entorno correcto
+Presiona Ctrl + Shift + P en VS Code.
+
+Escribe y selecciona "Python: Select Interpreter".
+
+Escoge el que dice algo como env\Scripts\python.exe (en Windows) o env/bin/python (en Mac/Linux).
+
+source env/bin/activate
+
+para test --> test.py
+para probar --> pred.py
