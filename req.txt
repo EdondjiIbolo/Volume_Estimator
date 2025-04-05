@@ -16,7 +16,7 @@ Before running this project on Windows, make sure your environment meets the fol
 - **Visual Studio Code** (VS Code) or **PyCharm**.
 - **Python 3.10 or later** (download from [python.org](https://www.python.org/downloads/)).
 - **pip** and **virtualenv** (usually included with Python or installable via pip).
-- **PyTorch** with **CUDA support** (if you have an NVIDIA GPU).
+
 
 #### 3️⃣ **Python Dependencies**
 Install the following dependencies using Command Prompt or PowerShell:
@@ -25,11 +25,14 @@ Install the following dependencies using Command Prompt or PowerShell:
 # Install PyTorch with CUDA (check your CUDA version at https://pytorch.org/get-started/locally/)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
-# Or for CPU only (if no GPU available):
-# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
 
 pip install timm pandas pillow numpy opencv-python tqdm matplotlib
 ```
+
+Importante: check the box "Add Python to PATH" before click to  "Install Now".
+
+click on "Install Now".
 
 > ⚠️ **Tip:** Run `python --version` and `pip --version` to make sure everything is installed correctly.
 
