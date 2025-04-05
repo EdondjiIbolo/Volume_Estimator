@@ -13,11 +13,13 @@ Este proyecto utiliza **EfficientNet** para estimar el volumen de materiales a p
 │   ├── 📂 test   # Imágenes de prueba
 │   ├── 📜 volumenes.csv  # Datos de entrenamiento con escala y zoom
 ├── 📂 models
-│   ├── 📜 modelo_volumen.pth  # Modelo entrenado
+│   ├── 📜 modelo_volumen_v2.pth  # Modelo entrenado
+├── 📂 utils
+|   ├── 📜 convert_to_csv.py  # Conversión de JSON a CSV
+|   ├── 📜 datos.json  # Informacion de las fotos (nombre , volumen, escala)
 ├── 📂 scripts
-│   ├── 📜 train.py  # Script de entrenamiento
+│   ├── 📜 test.py  # Script de entrenamiento
 │   ├── 📜 predict.py  # Predicción de volumen
-│   ├── 📜 json_to_csv.py  # Conversión de JSON a CSV
 ├── 📜 requirements.txt  # Dependencias
 ├── 📜 README.md  # Instrucciones
 ```
@@ -48,31 +50,40 @@ pip install -r requirements.txt
 
 ---
 
+## 🏋️‍♂️ Obtener la tabla de valores
+
+📌 **Estructura del CSV (`volumenes.csv`)**:
+Ejecuta el siguiente comando para entrenar el modelo:
+
+```bash
+python utils/convert_to_csv.py
+```
+
+Esto generara unarchivo volumenes.csv en la carpeta dataset, las tablas estaran asi:
+
+| image    | volumen_ml | zoom_mm |
+| -------- | ---------- | ------- |
+| img1.jpg | 50.2       | 4.5     |
+| img2.jpg | 30.7       | 3.2     |
+
+---
+
 ## 🏋️‍♂️ Entrenamiento del Modelo
 
 Ejecuta el siguiente comando para entrenar el modelo:
 
 ```bash
-python scripts/train.py
+python scripts/test.py
 ```
 
-✅ Esto generará el archivo `modelo_volumen.pth` en la carpeta `models/`.
-
-📌 **Estructura del CSV (`volumenes.csv`)**:
-
-| imagen   | volumen_real_ml | escala | zoom_mm |
-| -------- | --------------- | ------ | ------- |
-| img1.jpg | 50.2            | 1.2    | 4.5     |
-| img2.jpg | 30.7            | 1.0    | 3.2     |
-
----
+✅ Esto generará el archivo `modelo_volumen_v2.pth` en la carpeta `models/`.
 
 ## 🔍 Predicción de Volumen
 
 Para predecir el volumen de nuevas imágenes:
 
 ```bash
-python scripts/predict.py
+python scripts/pred.py
 ```
 
 El resultado mostrará el volumen estimado de cada imagen en la carpeta `test/`.
