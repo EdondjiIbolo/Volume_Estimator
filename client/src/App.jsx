@@ -13,9 +13,7 @@ function App() {
   // Function to convert milliliters to other units
   const convertMl = (ml) => ({
     milliliters: ml,
-    cubicCentimeters: ml,
-    cubicMeters: ml / 1_000_000,
-    grams: ml,
+    // cubicCentimeters: ml,
   });
   const getUnit = (key) => {
     const units = {
@@ -28,14 +26,16 @@ function App() {
   };
   // Handle image upload
   const handleUploadChange = ({ fileList }) => setFileList(fileList);
-  const handleRemove = () => setFileList([]);
+  const handleRemove = () => {
+    setZoom("");
+    setResult();
+    setFileList([]);
+  };
 
   // Calculate volume based on backend response
   const calculateVolume = (data) => {
-    const converted = convertMl(data.data);
-    return Object.fromEntries(
-      Object.entries(converted).map(([key, value]) => [key, value * 2])
-    );
+    const converted = convertMl(data); // Convirtiendo el volumen de ml a las otras unidades
+    return converted;
   };
 
   // Send image to Flask backend
@@ -52,7 +52,9 @@ function App() {
     try {
       setLoading(true);
       const { data } = await axios.post("/predict", formData);
-      setResult(calculateVolume(data));
+      const vol = calculateVolume(data.volume);
+      console.log(vol);
+      setResult(vol);
       message.success("Prediction completed successfully");
     } catch (error) {
       message.error("Error predicting volume");
@@ -60,7 +62,7 @@ function App() {
       setLoading(false);
     }
   };
-
+  console.log(fileList);
   return (
     <div className="container">
       <Card title="Volume Estimation" bordered={false} className="card">
@@ -119,12 +121,14 @@ function App() {
             <ul>
               {Object.entries(result).map(([key, value]) => (
                 <li key={key}>
-                  <strong>
-                    {key.replace(/([A-Z])/g, " $1").toLowerCase()}:
-                  </strong>{" "}
+                  <strong>{key.replace(/([A-Z])/g).toLowerCase()}:</strong>{" "}
                   {value} {getUnit(key)}
                 </li>
               ))}
+
+              <li>
+                <strong>Image:</strong> {fileList?.[0]?.name}
+              </li>
             </ul>
           </Card>
         )}

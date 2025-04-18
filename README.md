@@ -73,7 +73,7 @@ Esto generara unarchivo volumenes.csv en la carpeta dataset, las tablas estaran 
 Ejecuta el siguiente comando para entrenar el modelo:
 
 ```bash
-python scripts/test.py
+python  test.py
 ```
 
 ✅ Esto generará el archivo `modelo_volumen_v2.pth` en la carpeta `models/`.
@@ -83,7 +83,7 @@ python scripts/test.py
 Para predecir el volumen de nuevas imágenes:
 
 ```bash
-python scripts/pred.py
+python pred.py
 ```
 
 El resultado mostrará el volumen estimado de cada imagen en la carpeta `test/`.
@@ -116,6 +116,6 @@ Escribe y selecciona "Python: Select Interpreter".
 Escoge el que dice algo como env\Scripts\python.exe (en Windows) o env/bin/python (en Mac/Linux).
 
 source env/bin/activate
-
+para inicializar el backend --> python ./backend/app.py
 para test --> test.py
 para probar --> pred.py

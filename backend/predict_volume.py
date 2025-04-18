@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 # Cargar el modelo entrenado
-model = torch.load("models/modelo_volumen.pth", map_location=torch.device("cpu"))
+model = torch.load("models/modelo_volumen_v2.pth", map_location=torch.device("cpu"))
 model.eval()
 
 # Transformaciones para la imagen (deben coincidir con las usadas en el entrenamiento)
@@ -26,3 +26,5 @@ def predict_volume(image, zoom_mm):
     adjusted_volume = predicted_volume * (50 / zoom_mm)  # Ajusta según la escala
 
     return round(adjusted_volume, 2)
+
+

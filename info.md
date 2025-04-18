@@ -9,16 +9,16 @@ This project uses **EfficientNet** to estimate the volume of materials from imag
 ```
 📦 volume_project
 ├── 📂 dataset
-│   ├── 📂 train         # Training images
-│   ├── 📂 test          # Testing images
+│   ├── 📂 train  教        # Training images
+│   ├── 📂 test   测试图片       # Testing images
 │   ├── 📜 volumes.csv   # Training data with scale and zoom
 ├── 📂 models
 │   ├── 📜 volume_model_v2.pth  # Trained model
 ├── 📂 utils
 │   ├── 📜 convert_to_csv.py    # Convert JSON to CSV
 │   ├── 📜 data.json            # Image info (name, volume, scale)
-├── 📜 test.py       # Training script
-├── 📜 predict.py       # Volume prediction script
+├── 📜 test.py       # Training script 教机器学期，开一个新的文件
+├── 📜 predict.py       # Volume prediction script 测试机器学期，给我们物质体积
 ├── 📜 requirements.txt  # Dependencies
 ├── 📜 README.md         # Instructions
 ```
@@ -72,7 +72,7 @@ This will generate a `volumes.csv` file inside the `dataset` folder with data li
 Run the following command to train the model:
 
 ```bash
-python scripts/test.py
+python test.py
 ```
 
 ✅ This will generate the file `volume_model_v2.pth` inside the `models/` folder.
@@ -84,7 +84,7 @@ python scripts/test.py
 To predict the volume of new images:
 
 ```bash
-python scripts/pred.py
+python predict.py
 ```
 
 The result will show the estimated volume of each image in the `test/` folder.
