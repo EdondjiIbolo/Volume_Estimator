@@ -62,7 +62,7 @@ function App() {
       setLoading(false);
     }
   };
-  console.log(fileList);
+
   return (
     <div className="container">
       <Card title="Volume Estimation" bordered={false} className="card">
