@@ -1,48 +1,95 @@
-# 📌 Estimación de Volumen con Visión Artificial
+# 🧠 Callus Volume Estimator
 
-Este proyecto utiliza **EfficientNet** para estimar el volumen de materiales a partir de imágenes, teniendo en cuenta la escala y el zoom de la cámara.
-
----
-
-## 📂 Estructura del Proyecto
-
-```
-📦 proyecto_volumen
-├── 📂 dataset
-│   ├── 📂 train  # Imágenes de entrenamiento
-│   ├── 📂 test   # Imágenes de prueba
-│   ├── 📜 volumenes.csv  # Datos de entrenamiento con escala y zoom
-├── 📂 models
-│   ├── 📜 modelo_volumen_v2.pth  # Modelo entrenado
-├── 📂 utils
-|   ├── 📜 convert_to_csv.py  # Conversión de JSON a CSV
-|   ├── 📜 datos.json  # Informacion de las fotos (nombre , volumen, escala)
-├── 📂 scripts
-│   ├── 📜 test.py  # Script de entrenamiento
-│   ├── 📜 predict.py  # Predicción de volumen
-├── 📜 requirements.txt  # Dependencias
-├── 📜 README.md  # Instrucciones
-```
+A machine learning-based application to estimate the **volume of callus-like masses inside a flask** using images. The model is powered by **EfficientNet** and exposed through a **Flask** API, with a user-friendly **Vite/React** frontend.
 
 ---
 
-## 🚀 Instalación del Entorno
+## 📸 Project Overview
 
-### 1️⃣ Configurar entorno en macOS (Silicon M2)
+This project combines deep learning with computer vision to estimate the volume of cell aggregations or callus structures, using image input taken from different angles. Inspired by biological growth experiments, it aims to provide fast and approximate volume predictions from photographic data.
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend**: Vite + React
+- **Backend**: Python + Flask
+- **Model**: EfficientNet (trained on synthetic data resembling callus in flasks)
+- **Image Input**: PNG/JPG files captured with consistent background and scale (e.g., measurement cup in frame)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.9+
+- Node.js 18+
+- pip / venv
+- (optional) CUDA-compatible GPU for model inference acceleration
+
+### Backend Setup (Flask API)
 
 ```bash
-# Instalar Homebrew si no lo tienes
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
 
-# Instalar Python y pip
-brew install python
 
-# Crear entorno virtual
-python3 -m venv env
-source env/bin/activate  # Activar entorno
+
+Aquí tienes la traducción al inglés de tu README:
+
+---
+
+# 📌 Volume Estimation with Computer Vision
+
+This project uses **EfficientNet** to estimate the volume of materials from images, taking into account the camera's scale and zoom.
+
+---
+
+## 📂 Project Structure
+
 ```
 
-### 2️⃣ Instalar dependencias
+📦 volume_project
+├── 📂 dataset
+│ ├── 📂 train # Training images
+│ ├── 📂 test # Test images
+│ ├── 📜 volumenes.csv # Training data with scale and zoom info
+├── 📂 models
+│ ├── 📜 modelo_volumen_v2.pth # Trained model
+├── 📂 utils
+│ ├── 📜 convert_to_csv.py # Convert JSON to CSV
+│ ├── 📜 datos.json # Image info (filename, volume, scale)
+├── 📂 scripts
+│ ├── 📜 test.py # Training script
+│ ├── 📜 predict.py # Volume prediction
+├── 📜 requirements.txt # Dependencies
+├── 📜 README.md # Instructions
+
+````
+
+---
+
+## 🚀 Environment Setup
+
+### 1️⃣ Setup on macOS (Silicon M2)
+
+```bash
+# Install Homebrew if you don’t have it
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Python and pip
+brew install python
+
+# Create virtual environment
+python3 -m venv env
+source env/bin/activate  # Activate the environment
+````
+
+### 2️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -50,16 +97,16 @@ pip install -r requirements.txt
 
 ---
 
-## 🏋️‍♂️ Obtener la tabla de valores
+## 📊 Generate the CSV Table
 
-📌 **Estructura del CSV (`volumenes.csv`)**:
-Ejecuta el siguiente comando para entrenar el modelo:
+📌 **CSV Structure (`volumenes.csv`)**:  
+Run the following command to generate the training data:
 
 ```bash
 python utils/convert_to_csv.py
 ```
 
-Esto generara unarchivo volumenes.csv en la carpeta dataset, las tablas estaran asi:
+This will generate `volumenes.csv` in the `dataset/` folder. The table will look like this:
 
 | image    | volumen_ml | zoom_mm |
 | -------- | ---------- | ------- |
@@ -68,54 +115,70 @@ Esto generara unarchivo volumenes.csv en la carpeta dataset, las tablas estaran 
 
 ---
 
-## 🏋️‍♂️ Entrenamiento del Modelo
+## 🏋️‍♂️ Model Training
 
-Ejecuta el siguiente comando para entrenar el modelo:
+Run the following command to train the model:
 
 ```bash
-python  test.py
+python test.py
 ```
 
-✅ Esto generará el archivo `modelo_volumen_v2.pth` en la carpeta `models/`.
+✅ This will generate the `modelo_volumen_v2.pth` file in the `models/` folder.
 
-## 🔍 Predicción de Volumen
+---
 
-Para predecir el volumen de nuevas imágenes:
+## 🔍 Volume Prediction
+
+To predict the volume of new images:
 
 ```bash
 python pred.py
 ```
 
-El resultado mostrará el volumen estimado de cada imagen en la carpeta `test/`.
+The output will show the estimated volume of each image in the `test/` folder.
 
 ---
 
-## 🔄 Conversión de JSON a CSV
+## 🔄 Convert JSON to CSV
 
-Si tienes datos en formato JSON, conviértelos a CSV con:
+If you have data in JSON format, convert it to CSV with:
 
 ```bash
 python scripts/json_to_csv.py
 ```
 
-Esto generará un archivo CSV compatible con el entrenamiento del modelo.
+This will generate a CSV file compatible with the model training.
 
 ---
 
-## 📌 Notas Finales
+## 📌 Final Notes
 
-- **Asegúrate de tomar fotos con la misma distancia y ángulo.**
-- **El zoom se mide en mm**, no en factores (ej. x1.0, x2.0).
-- **Cuida la iluminación y nitidez para mejores resultados.**
+- **Make sure photos are taken from the same distance and angle.**
+- **Zoom is measured in mm**, not in factors (e.g., x1.0, x2.0).
+- **Good lighting and image clarity improve accuracy.**
 
-🔹 2️⃣ Asegurar que VS Code use el entorno correcto
-Presiona Ctrl + Shift + P en VS Code.
+🔹 2️⃣ Make sure VS Code uses the correct environment:  
+Press `Ctrl + Shift + P` in VS Code.  
+Type and select **"Python: Select Interpreter"**.  
+Choose the one that looks like `env/Scripts/python.exe` (Windows) or `env/bin/python` (Mac/Linux).
 
-Escribe y selecciona "Python: Select Interpreter".
+To activate backend:
 
-Escoge el que dice algo como env\Scripts\python.exe (en Windows) o env/bin/python (en Mac/Linux).
-
+```bash
 source env/bin/activate
-para inicializar el backend --> python ./backend/app.py
-para test --> test.py
-para probar --> pred.py
+python ./backend/app.py
+```
+
+To train:
+
+```bash
+python test.py
+```
+
+To predict:
+
+```bash
+python prediction.py
+```
+
+---
