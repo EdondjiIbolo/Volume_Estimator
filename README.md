@@ -33,7 +33,7 @@ This project combines deep learning with computer vision to estimate the volume 
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/Scripts/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
 
@@ -92,7 +92,7 @@ source env/bin/activate  # Activate the environment
 ### 2️⃣ Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r prerequisites.txt
 ```
 
 ---
@@ -132,7 +132,7 @@ python test.py
 To predict the volume of new images:
 
 ```bash
-python pred.py
+python predict.py
 ```
 
 The output will show the estimated volume of each image in the `test/` folder.
@@ -165,7 +165,7 @@ Choose the one that looks like `env/Scripts/python.exe` (Windows) or `env/bin/py
 To activate backend:
 
 ```bash
-source env/bin/activate
+source env/Scripts/activate
 python ./backend/app.py
 ```
 
@@ -178,7 +178,12 @@ python test.py
 To predict:
 
 ```bash
-python prediction.py
+python predict.py
 ```
 
 ---
+
+
+git add . 
+git commit -m "new changes"
+git push origin main
